@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class calculadora {
+    public static void main(String[] args) {
+        int resultado = 0;
+
+        int n1 = 1;
+        int n2 = 1;
+        int metodo = 0;
+        resultado = 0;
+        int continuar = 1;
+        Scanner input = new Scanner(System.in);
+        while (continuar == 1) {
+            System.out.println("Escolha a operação:");
+            System.out.println("1 - Soma | 2 - Subtração | 3 - Multiplicação | 4 - Divisão");
+            metodo = input.nextInt();
+            if(metodo < 1 && metodo > 4){
+                System.out.println(metodo + "não é uma operação válida.");
+            }
+            System.out.println("Insira o número 1: ");
+            n1 = input.nextInt();
+            System.out.println("Insira o número 2: ");
+            n2 = input.nextInt();
+
+            int mul = n1 * n2;
+            int div = n1 / n2;
+            int som = n1 + n2;
+            int sub = n1 - n2;
+
+            switch (metodo) {
+                case 1:
+                    resultado = som;
+                    break;
+                case 2:
+                    resultado = sub;
+                    break;
+                case 3:
+                    resultado = mul;
+                    break;
+                case 4:
+                    resultado = div;
+                    break;
+                default:
+                    System.out.println(metodo + " não é um número de operação válido.");
+            }
+            if (metodo > 0 && metodo < 5) {
+                System.out.println("O resultado é: " + resultado);
+            } else {
+                continuar = 1;
+            }
+
+            boolean confirma = false;
+            System.out.println("Deseja continuar?");
+            System.out.println("1 - Sim || 2 - Não");
+            continuar = input.nextInt();
+            switch (continuar) {
+                case 1:
+                    confirma = true;
+                    break;
+                case 2:
+                    confirma = false;
+                    break;
+                default:
+                    System.out.println(continuar + " Não é válido.");
+
+
+            }
+        }
+    }
+
+}
+
+
